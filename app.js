@@ -79,7 +79,7 @@ setInterval(createHeart, 500);
 // ==========================================
 // Relationship Timer (Since Feb 25, 2026)
 // ==========================================
-const startDate = new Date('2026-02-25T00:00:00').getTime();
+const startDate = new Date('2026-02-24T00:00:00').getTime();
 
 function updateTimer() {
   const now = new Date().getTime();
