@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Love Story</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div class="background-hearts" id="hearts-container"></div>
+
+  <div class="app-container">
+    <header>
+      <h1 class="logo">RxK ❤️</h1>
+      <nav>
+        <button class="nav-btn active" data-tab="home">Home</button>
+        <button class="nav-btn" data-tab="dates">Planned Dates</button>
+        <button class="nav-btn" data-tab="notes">Love Notes</button>
+      </nav>
+    </header>
+
+    <div id="db-warning" class="warning-banner" style="display: none;">
+      ⚠️ Firebase not configured. Data won't save. Edit app.js to add your config!
+    </div>
+
+    <main>
+      <!-- HOME TAB -->
+      <section id="home" class="tab-content active">
+        <div class="card timer-card">
+          <h2>Together For</h2>
+          <div class="timer-display" id="timer">
+            <div class="time-block"><span id="days">0</span><label>Days</label></div>
+            <div class="time-block"><span id="hours">0</span><label>Hours</label></div>
+            <div class="time-block"><span id="mins">0</span><label>Mins</label></div>
+            <div class="time-block"><span id="secs">0</span><label>Secs</label></div>
+          </div>
+          <p class="start-date-text">Since February 25, 2026</p>
+        </div>
+      </section>
+
+      <!-- DATES TAB -->
+      <section id="dates" class="tab-content">
+        <div class="card">
+          <h2>Our Future Dates ✨</h2>
+          <form id="date-form" class="input-form">
+            <input type="text" id="date-title" placeholder="What should we do?" required>
+            <input type="date" id="date-time">
+            <button type="submit" class="submit-btn">Add Date</button>
+          </form>
+          <ul id="dates-list" class="items-list">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- NOTES TAB -->
+      <section id="notes" class="tab-content">
+        <div class="card">
+          <h2>Love Notes 💌</h2>
+          <form id="note-form" class="input-form">
+            <textarea id="note-text" placeholder="Leave a cute message..." required rows="3"></textarea>
+            <div class="form-row">
+              <input type="text" id="note-author" placeholder="From who?" required class="author-input">
+              <button type="submit" class="submit-btn mt-0">Post Note</button>
+            </div>
+          </form>
+          <div id="notes-list" class="notes-grid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ just for us</p>
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
